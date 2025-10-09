@@ -22,19 +22,44 @@ public class Menu {
         for (int i = 0; i < opcoesMenu.size(); i++) {
             System.out.printf("%d - %s%n", i + 1, opcoesMenu.get(i));
         }
+
         System.out.println();
 
         int opcaoEscolhida;
+
         do {            
-            opcaoEscolhida = Teclado.readInt("Qual a sua opção: "); 
+            opcaoEscolhida = Teclado.readInt("Qual a sua opcao: "); 
             if (opcaoEscolhida < 1 || opcaoEscolhida > opcoesMenu.size()) {
-                Video.mensagemAlerta("Opção inválida, tente novamente!");            }
+                Video.mensagemAlerta("Opcao invalida, tente novamente!");
+            }            
         } while (opcaoEscolhida < 1 || opcaoEscolhida > opcoesMenu.size());        
 
         return opcaoEscolhida;
     }
-}
-<<<<<<< HEAD
 
-=======
->>>>>>> dd5e17d9506ec1812f488a788b4ed20b6f7d63b8
+    public static int exibirExemplo() { //usar como static em uma classe de menus
+        ArrayList<String> opcoes = new ArrayList<>();
+        opcoes.add("Opcao 1");
+        opcoes.add("Opcao 2");
+        opcoes.add("Voltar");
+        Menu menu = new Menu("Menu de Opcoes", opcoes);
+        return menu.exibir();
+    }
+
+    /*Na App 
+     * 
+     * int opcaoPrincipal;
+
+            do {
+                opcaoPrincipal = MenuPrincipal.exibir();
+
+                switch (opcaoPrincipal) {
+                    case 1 -> {
+                     ...
+                    }
+                ...
+            ...
+     *  
+    */
+
+}
